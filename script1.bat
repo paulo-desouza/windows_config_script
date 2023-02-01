@@ -6,12 +6,6 @@ net localgroup administrators CelAdmin /add
 
 net user Sysman /delete
 
-cd D:\Installers
-
-start ChromeSetup.exe
-start OfficeSetup.exe
-start AdobeSetup.exe
-
 wmic UserAccount set PasswordExpires=False
 
 tzutil /s "Eastern Standard Time"
@@ -22,3 +16,5 @@ hostname>temp.txt
 set /p oldname=<temp.txt
 
 WMIC computersystem where caption='%oldname%' rename NewComputerName
+
+shutdown /r /t 6
